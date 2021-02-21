@@ -25,7 +25,7 @@ class AdapterString : RecyclerView.Adapter<AdapterString.StringViewHolder>()  {
         datos?.let {
             holder.textView.text = it[position]
             if (position%2 ==0){
-                holder.textView.setBackgroundColor(ContextCompat.getColor(holder.root.context, R.color.design_default_color_primary_variant))
+                holder.root.setBackgroundColor(ContextCompat.getColor(holder.root.context, R.color.design_default_color_primary_variant))
             }
         }
     }
