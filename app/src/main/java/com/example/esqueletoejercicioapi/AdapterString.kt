@@ -13,7 +13,7 @@ class AdapterString : RecyclerView.Adapter<AdapterString.StringViewHolder>()  {
 
     private var datos : List<String>? = null
 
-    class StringViewHolder(root: View, val textView: TextView) : RecyclerView.ViewHolder(root)
+    class StringViewHolder(val root: View, val textView: TextView) : RecyclerView.ViewHolder(root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StringViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_main_item, parent, false)
@@ -25,7 +25,7 @@ class AdapterString : RecyclerView.Adapter<AdapterString.StringViewHolder>()  {
         datos?.let {
             holder.textView.text = it[position]
             if (position%2 ==0){
-                holder.textView.setBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.design_default_color_primary_variant))
+                holder.textView.setBackgroundColor(ContextCompat.getColor(holder.root.context, R.color.design_default_color_primary_variant))
             }
         }
     }
