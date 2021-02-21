@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -23,6 +24,9 @@ class AdapterString : RecyclerView.Adapter<AdapterString.StringViewHolder>()  {
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
         datos?.let {
             holder.textView.text = it[position]
+            if (position%2 ==0){
+                holder.textView.setBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.design_default_color_primary_variant))
+            }
         }
     }
 
